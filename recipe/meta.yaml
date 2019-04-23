@@ -5,7 +5,6 @@ package:
   version: {{ version }}
 
 source:
-  fn: patchelf-{{ version }}.tar.gz
   url: http://nixos.org/releases/patchelf/patchelf-{{ version }}/patchelf-{{ version }}.tar.gz
   sha256: e52378cc2f9379c6e84a04ac100a3589145533a7b0cd26ef23c79dfd8a9038f9
 
