@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/NixOS/patchelf/archive/{{ version }}.tar.gz
-  sha256: 51a1a46f9ed1db84e87296246d095394b57bd987ca559cef5d24d21b179efa63
+  sha256: 3dca33fb862213b3541350e1da262249959595903f559eae0fbc68966e9c3f56
 
 build:
   number: 0
