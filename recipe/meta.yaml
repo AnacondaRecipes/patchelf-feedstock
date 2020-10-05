@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: http://nixos.org/releases/patchelf/patchelf-{{ version }}/patchelf-{{ version }}.tar.gz
+  url: https://github.com/NixOS/patchelf/archive/{{ version }}.tar.gz
   sha256: 51a1a46f9ed1db84e87296246d095394b57bd987ca559cef5d24d21b179efa63
 
 build:
