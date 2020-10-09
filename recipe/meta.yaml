@@ -12,6 +12,9 @@ build:
   number: 0
   skip: true  # [not linux]
   binary_relocation: false
+  patches:
+    - 0001-build-id.patch
+    - 0002-remove-broken-test-r-path.patch
 
 requirements:
   build:
