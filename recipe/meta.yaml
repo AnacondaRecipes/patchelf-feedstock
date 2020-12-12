@@ -8,25 +8,32 @@ source:
   url: https://github.com/NixOS/patchelf/archive/{{ version }}.tar.gz
   sha256: 3dca33fb862213b3541350e1da262249959595903f559eae0fbc68966e9c3f56
   patches:
+    # Fix unsupported overlap of SHT_NOTE and PT_NOTE
+    # See https://github.com/NixOS/patchelf/pull/230
+    - 6edec83653ce1b5fc201ff6db93b966394766814.patch
     - 0001-build-id.patch
     - 0002-remove-broken-test-r-path.patch
 
 build:
-  number: 0
-  skip: true  # [not linux]
+  number: 1
+  skip: true  # [not unix]
   binary_relocation: false
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make
+    - patch  # [unix]
+    - m2-patch  # [win]
+    - make  # [unix]
+    - m2-make  # [win]
     - automake
     - autoconf
 
 test:
   commands:
-    - bash -c '[[ "$(patchelf --version)" =~ "patchelf {{ version }}".* ]]'
+    - bash -c '[[ "$(patchelf --version)" =~ "patchelf {{ version }}".* ]]'  # [unix]
+    - patchelf --version  # [win]
 
 about:
   home: http://nixos.org/patchelf.html
