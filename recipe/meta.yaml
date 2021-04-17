@@ -18,6 +18,8 @@ build:
   number: 1
   script: build.sh  # [win]
   binary_relocation: false
+  ignore_run_exports:
+    - libstdcxx-ng  # [linux and aarch64]
 
 requirements:
   build:
