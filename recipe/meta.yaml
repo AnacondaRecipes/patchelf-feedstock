@@ -1,4 +1,4 @@
-{% set version = "0.12" %}
+{% set version = "0.13" %}
 
 package:
   name: patchelf
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/NixOS/patchelf/archive/{{ version }}.tar.gz
-  sha256: 3dca33fb862213b3541350e1da262249959595903f559eae0fbc68966e9c3f56
+  sha256: 60c6aeadb673de9cc1838b630c81f61e31c501de324ef7f1e8094a2431197d09
   patches:
     # Fix unsupported overlap of SHT_NOTE and PT_NOTE
     # See https://github.com/NixOS/patchelf/pull/230
