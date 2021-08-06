@@ -12,7 +12,7 @@ source:
     # See https://github.com/NixOS/patchelf/pull/230
 #    - 6edec83653ce1b5fc201ff6db93b966394766814.patch
     - 0001-build-id.patch
-    - 0002-remove-broken-test-r-path.patch
+#    - 0002-remove-broken-test-r-path.patch
 
 build:
   number: 1
