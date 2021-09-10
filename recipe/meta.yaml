@@ -8,9 +8,6 @@ source:
   url: https://github.com/NixOS/patchelf/archive/{{ version }}.tar.gz
   sha256: 60c6aeadb673de9cc1838b630c81f61e31c501de324ef7f1e8094a2431197d09
   patches:
-    # Fix unsupported overlap of SHT_NOTE and PT_NOTE
-    # See https://github.com/NixOS/patchelf/pull/230
-    - 6edec83653ce1b5fc201ff6db93b966394766814.patch
     - 0001-build-id.patch
     - 0002-remove-broken-test-r-path.patch
 
