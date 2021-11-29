@@ -1,4 +1,4 @@
-{% set version = "0.13" %}
+{% set version = "0.14.1" %}
 
 package:
   name: patchelf
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/NixOS/patchelf/archive/{{ version }}.tar.gz
-  sha256: 60c6aeadb673de9cc1838b630c81f61e31c501de324ef7f1e8094a2431197d09
+  sha256: 9b5d6b94f2a941aca784916e5062738588a8e0d9582f599803a5fac713df537f
   patches:
     - 0001-build-id.patch
     - 0002-remove-broken-test-r-path.patch
