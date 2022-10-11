@@ -10,12 +10,12 @@ source:
   url: https://github.com/NixOS/patchelf/archive/{{ version }}.tar.gz
   sha256: {{ checksum }}
   patches:
-    - patches/0001-build-id.patch
-    - patches/0002-remove-broken-test-r-path.patch
+    - 0001-build-id.patch
+    - 0002-remove-broken-test-r-path.patch
 
 build:
-  number: {{ build }}
-  skip: true  # [win or py<37]
+  number: 0
+  skip: true  # [win]
   script: build.sh  # [win]
   binary_relocation: false
 
@@ -37,14 +37,14 @@ test:
     - patchelf --version  # [win]
 
 about:
-  home: http://nixos.org/patchelf.html
+  home: https://nixos.org/patchelf.html
   license: GPL-3.0-or-later
   license_file: COPYING
   summary: A small utility to modify the dynamic linker and RPATH of ELF executables.
   description: |
     PatchELF is a small utility to modify the dynamic linker and RPATH of ELF
     executables.
-  doc_url: http://nixos.org/patchelf.html
+  doc_url: https://nixos.org/patchelf.html
   dev_url: https://github.com/NixOS/patchelf
 
 extra:
