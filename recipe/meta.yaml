@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/NixOS/patchelf/archive/{{ version }}.tar.bz2
+  url: https://github.com/NixOS/patchelf/releases/download/{{ version }}/patchelf-{{ version }}.tar.bz2
   sha256: {{ checksum }}
   patches:
     - 0001-build-id.patch
