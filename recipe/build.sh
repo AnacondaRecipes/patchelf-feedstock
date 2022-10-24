@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ${SRC_DIR}
+
 ./bootstrap.sh
 ./configure --prefix=${PREFIX}  \
             --host=${HOST}      \
