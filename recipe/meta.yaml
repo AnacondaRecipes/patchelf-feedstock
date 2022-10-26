@@ -1,5 +1,5 @@
 {% set version = "0.15.0" %}
-{% set checksum = "5d1eda9bad4439bb9c0a87fcba198d7c0d372f361e77de41d68d6308062e5000" %}
+{% set checksum = "f4036d3ee4d8e228dec1befff0f6e46d8a40e9e570e0068e39d77e62e2c8bdc2" %}
 {% set build = "0" %}
 
 package:
@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/NixOS/patchelf/archive/refs/tags/{{ version }}.tar.gz
+  url: https://github.com/NixOS/patchelf/releases/download/{{ version }}/patchelf-{{ version }}.tar.bz2
   sha256: {{ checksum }}
   patches:
     - patches/0001-build-id.patch
