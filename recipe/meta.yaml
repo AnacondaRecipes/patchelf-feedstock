@@ -30,6 +30,8 @@ requirements:
     - m2-make  # [win]
     - automake
     - autoconf
+    - libtool
+    - m4
 
 test:
   commands:

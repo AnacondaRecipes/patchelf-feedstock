@@ -2,6 +2,7 @@
 
 cd ${SRC_DIR}
 
+autoreconf
 #./bootstrap.sh
 
 # -V does not exist for clang
