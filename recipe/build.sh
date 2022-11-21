@@ -2,13 +2,8 @@
 
 cd ${SRC_DIR}
 
-#autoreconf
-#./bootstrap.sh
-
-# -V does not exist for clang
-#if [[ $(uname) == Darwin ]]; then
-#  sed -i'' -e 's/for ac_option in --version -v -V -qversion; do/for ac_option in --version -v -qversion; do/g' 'configure'
-#fi
+# to fix configure version mismatch
+autoreconf
 
 ./configure --prefix=${PREFIX}  \
             --host=${HOST}      \
