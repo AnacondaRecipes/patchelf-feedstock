@@ -32,13 +32,11 @@ requirements:
     - autoconf
     - libtool
     - m4
-  test:
+    # needed for tests
     - binutils  # [not (win or osx)]
 
 test:
   commands:
-    - make check
-    - make test
     - bash -c '[[ "$(patchelf --version)" =~ "patchelf {{ version }}".* ]]'  # [unix]
     - patchelf --version  # [win]
 
