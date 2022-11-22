@@ -41,14 +41,15 @@ test:
     - patchelf --version  # [win]
 
 about:
-  home: https://nixos.org/patchelf.html
+  home: https://github.com/NixOS/patchelf
   license: GPL-3.0-or-later
+  license_family: GPL
   license_file: COPYING
   summary: A small utility to modify the dynamic linker and RPATH of ELF executables.
   description: |
     PatchELF is a small utility to modify the dynamic linker and RPATH of ELF
     executables.
-  doc_url: https://nixos.org/patchelf.html
+  doc_url: https://github.com/NixOS/patchelf/blob/master/README.md
   dev_url: https://github.com/NixOS/patchelf
 
 extra:
