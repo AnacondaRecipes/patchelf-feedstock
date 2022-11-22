@@ -33,7 +33,7 @@ requirements:
     - libtool
     - m4
     # needed for tests
-    - binutils  # [not (win or osx)]
+    - binutils  # [linux]
 
 test:
   commands:
