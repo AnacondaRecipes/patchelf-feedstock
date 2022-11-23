@@ -1,15 +1,17 @@
-{% set version = "0.13" %}
+{% set version = "0.15.0" %}
+{% set checksum = "f4036d3ee4d8e228dec1befff0f6e46d8a40e9e570e0068e39d77e62e2c8bdc2" %}
+{% set build = "0" %}
 
 package:
   name: patchelf
   version: {{ version }}
 
 source:
-  url: https://github.com/NixOS/patchelf/archive/{{ version }}.tar.gz
-  sha256: 60c6aeadb673de9cc1838b630c81f61e31c501de324ef7f1e8094a2431197d09
+  url: https://github.com/NixOS/patchelf/releases/download/{{ version }}/patchelf-{{ version }}.tar.bz2
+  sha256: {{ checksum }}
   patches:
-    - 0001-build-id.patch
-    - 0002-remove-broken-test-r-path.patch
+    - patches/0001-build-id.patch
+    - patches/0002-remove-broken-test-r-path.patch
 
 build:
   number: 0
@@ -28,6 +30,10 @@ requirements:
     - m2-make  # [win]
     - automake
     - autoconf
+    - libtool
+    - m4
+    # needed for tests
+    - binutils  # [linux]
 
 test:
   commands:
@@ -35,14 +41,15 @@ test:
     - patchelf --version  # [win]
 
 about:
-  home: http://nixos.org/patchelf.html
+  home: https://github.com/NixOS/patchelf
   license: GPL-3.0-or-later
+  license_family: GPL
   license_file: COPYING
   summary: A small utility to modify the dynamic linker and RPATH of ELF executables.
   description: |
     PatchELF is a small utility to modify the dynamic linker and RPATH of ELF
     executables.
-  doc_url: http://nixos.org/patchelf.html
+  doc_url: https://github.com/NixOS/patchelf/blob/master/README.md
   dev_url: https://github.com/NixOS/patchelf
 
 extra:
