@@ -10,7 +10,6 @@ source:
   url: https://github.com/NixOS/patchelf/releases/download/{{ version }}/patchelf-{{ version }}.tar.bz2
   sha256: {{ checksum }}
   patches:
-    - patches/0001-build-id.patch
     - patches/0002-remove-broken-test-r-path.patch
 
 build:
