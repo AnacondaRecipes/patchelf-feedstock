@@ -1,5 +1,5 @@
-{% set version = "0.15.0" %}
-{% set checksum = "f4036d3ee4d8e228dec1befff0f6e46d8a40e9e570e0068e39d77e62e2c8bdc2" %}
+{% set version = "0.17.2" %}
+{% set checksum = "bae2ea376072e422c196218dd9bdef0548ccc08da4de9f36b4672df84ea2d8e2" %}
 {% set build = "0" %}
 
 package:
@@ -10,7 +10,6 @@ source:
   url: https://github.com/NixOS/patchelf/releases/download/{{ version }}/patchelf-{{ version }}.tar.bz2
   sha256: {{ checksum }}
   patches:
-    - patches/0001-build-id.patch
     - patches/0002-remove-broken-test-r-path.patch
 
 build:
