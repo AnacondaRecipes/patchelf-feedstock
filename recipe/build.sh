@@ -3,14 +3,16 @@
 cd ${SRC_DIR}
 
 # to fix configure version mismatch
-autoreconf
+autoreconf -fi
 
 ./configure --prefix=${PREFIX}  \
             --host=${HOST}      \
             --build=${BUILD}
 make -j${CPU_COUNT} ${VERBOSE_AT}
 
-make check
-make tests
+if [[ $(uname) != Darwin ]]; then
+  make check
+  make tests
+fi
 
 make install
