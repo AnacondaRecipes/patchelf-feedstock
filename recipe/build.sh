@@ -10,9 +10,7 @@ autoreconf
             --build=${BUILD}
 make -j${CPU_COUNT} ${VERBOSE_AT}
 
-if [[ $(uname) != Darwin ]]; then
-  make check
-  make tests
-fi
+make check
+make tests
 
 make install
