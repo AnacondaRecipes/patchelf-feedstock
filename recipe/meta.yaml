@@ -9,7 +9,8 @@ source:
   url: https://github.com/NixOS/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.bz2
   sha256: b189d3ec57730757895b9e7d3a1f136d3af96ec9228ae6ef0a07c20a213f28f5
   patches:
-    - patches/0001-disable-rpath-tests-on-linux.patch
+    - patches/0001-disable-rpath-tests-on-linux.patch  # [linux]
+    - patches/0002-remove-z-and-pic-on-osx-for-tests.patch  # [osx]
 
 build:
   number: 0
