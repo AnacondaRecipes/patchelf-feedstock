@@ -1,12 +1,30 @@
-From 7ed4bdde0fc6a2efb7980c44ae2b88b3affe5d74 Mon Sep 17 00:00:00 2001
+From a3f5a431fd7c4b5d476922bbc33c6ba98b9513ac Mon Sep 17 00:00:00 2001
 From: Andrii Osipov <aosipov@anaconda.com>
 Date: Thu, 2 Jul 2026 03:21:18 -0700
 Subject: [PATCH] remove -z and -pic on osx for tests
 
 ---
+ configure.ac      |  6 ++++++
  tests/Makefile.am | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ 2 files changed, 22 insertions(+)
 
+diff --git a/configure.ac b/configure.ac
+index fee6302..3830c4b 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -36,6 +36,12 @@ AM_CONDITIONAL([WITH_ASAN], [test x"$with_asan" = xyes])
+ 
+ AX_CXX_COMPILE_STDCXX([17], [noext], [])
+ 
++case $host_os in
++  darwin*) is_darwin=yes ;;
++  *)       is_darwin=no ;;
++esac
++AM_CONDITIONAL([OS_DARWIN], [test "x$is_darwin" = xyes])
++
+ AC_ARG_WITH([ubsan],
+    AS_HELP_STRING([--with-ubsan], [Build with undefined behavior sanitizer])
+ )
 diff --git a/tests/Makefile.am b/tests/Makefile.am
 index 8e11d45..fa87e9d 100644
 --- a/tests/Makefile.am
