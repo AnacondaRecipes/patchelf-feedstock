@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 cd ${SRC_DIR}
 
 # to fix configure version mismatch
