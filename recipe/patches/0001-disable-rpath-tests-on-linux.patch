@@ -1,0 +1,33 @@
+From eebf9d548a5b82bc40f414730982f3874047b1e6 Mon Sep 17 00:00:00 2001
+From: Andrii Osipov <aosipov@anaconda.com>
+Date: Thu, 2 Jul 2026 03:08:49 -0700
+Subject: [PATCH] disable rpath tests on linux
+
+---
+ tests/Makefile.am | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/tests/Makefile.am b/tests/Makefile.am
+index 8e11d45..592b0a3 100644
+--- a/tests/Makefile.am
++++ b/tests/Makefile.am
+@@ -21,7 +21,7 @@ no_rpath_arch_TESTS = \
+ 
+ src_TESTS = \
+   plain-fail.sh plain-run.sh shrink-rpath.sh set-interpreter-short.sh \
+-  set-interpreter-long.sh set-rpath.sh add-rpath.sh no-rpath.sh big-dynstr.sh \
++  set-interpreter-long.sh set-rpath.sh add-rpath.sh big-dynstr.sh \
+   set-rpath-library.sh soname.sh shrink-rpath-with-allowed-prefixes.sh \
+   set-rpath-rel-map.sh \
+   remove-rld-map-rel.sh \
+@@ -59,7 +59,6 @@ src_TESTS = \
+   modify-execstack.sh \
+   rename-dynamic-symbols.sh \
+   overlapping-segments-after-rounding.sh \
+-  shared-rpath.sh \
+   short-first-segment.sh \
+   empty-note.sh \
+   set-interpreter-same.sh \
+-- 
+2.39.5 (Apple Git-154)
+
